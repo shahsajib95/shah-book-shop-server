@@ -32,13 +32,13 @@ router.get("/", (req, res) => {
   res.send("Server is up");
 });
 
-const PORT = 5000 || process.env.PORT;
+const port = 5000 || process.env.PORT;
 
 mongoose
   .connect(process.env.CONNECTION_URL, {
     useNewUrlParser: true
   })
-  .then(() => router.listen(PORT, console.log(`Server running or ${PORT}`)))
+  .then(() => router.listen(port, console.log(`Server running or ${port}`)))
   .catch((error) => console.log(error));
 
 mongoose.Promise = global.Promise;
