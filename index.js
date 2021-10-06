@@ -32,7 +32,7 @@ router.get("/", (req, res) => {
   res.send("Server is up");
 });
 
-const port = 5000 || process.env.PORT;
+const port = process.env.PORT || 5240;
 
 mongoose
   .connect(process.env.CONNECTION_URL, {
